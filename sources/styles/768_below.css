@@ -142,28 +142,48 @@
     }
     /* NAV -------------SECTION ABOUT ME --------------------------- END*/
     .location-box {
-        top: 10%;
-        left: clamp(20px, 3%, 50px);
-        max-width: 360px;
-        width: 15%;
-        width: 200px;
-        width: clamp(200px, 15%, 350px);
-        height: 50%;
+        top: 2%;
+        left: 1%;
+        max-width: unset;
+        width: 98%;
+        height: 20%;
+        flex-direction: row !important;
+    }
+    .location-box .info-con {
+        width: 30% !important;
+        height: 95%;
+        margin-top: unset !important;
+        margin-left: 3%;
+        margin-right: auto;
+    }
+    .location-box .img-con {
+        min-width: 110px !important;
+        width: 20% !important;
+        height: 95% !important;
+        /* border: 1px solid white; */
+        margin-right: 40%;
+        margin-bottom: unset !important;
+        margin-top: unset !important;
     }
     .github-box {
-        top: 65%;
-        left: clamp(20px, 3%, 50px);
-        max-width: 360px;
-        width: 15%;
-        width: clamp(200px, 15%, 350px);
-        height: 25%;
+        top: 3%;
+        left: unset;
+        right: 3%;
+        max-width: unset;
+        width: 20%;
+        height: unset;
+        height: 18%;
+    }
+    .github-box .github-logo {
+        width: 60% !important;
     }
     .text-box {
-        top: 10%;
-        left: clamp(250px, 25%, 575px);
-        max-width: 1200px;
-        width: 60%;
-        height: 80%;
+        top: 24%;
+        left: 1%;
+        max-width: unset;
+        width: 98%;
+        height: 70%;
+        justify-content: center !important;
     }
     /* NAV -------------SECTION MY WORK --------------------------- START*/
 
@@ -185,8 +205,9 @@
         border: 1px solid white;
     }
     .example-buttons {
-        width: 30%;
-        aspect-ratio: 1.3;
+        width: 45%;
+        height: unset !important;
+        aspect-ratio: .7 !important;
     }
     .description-con {
         background-color: rgba(51, 61, 92, .7);
