@@ -1,0 +1,187 @@
+
+
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    /* HEADER ------------HEADLINES ON THE LEFT --------------------------- START*/
+    header {
+        position: static;
+    }
+    .hl-con {
+        top: 35%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: clamp(800px, 55%, 1000px);
+        aspect-ratio: 1.8;
+        padding-left: 4%;
+    }
+    .hl-texts {
+        font-size: clamp(80px, 5.5vmax, 100px);
+    }
+    /* HEADER ------------HEADLINES ON THE LEFT --------------------------- END*/
+    
+    /* HEADER ------------PICTURE OF ME ON THE RIGHT --------------------------- START*/
+    .header-img-con-big {
+        width: clamp(300px, 40%, 400px);
+        right: 20% !important;
+        bottom: 0 !important;
+    }
+    .header-img-con-big .img-me-con > img {
+        height: 65%;
+    }
+    .header-img-con-small {
+        width: 7%;
+    }
+    .navbar-img-con {
+        width: clamp(175px, 10%, 225px);
+    }
+    .svg-texts-big {
+        font-size: clamp(60px, 9vmax, 90px);
+        /* font-size: 8vmax; */
+    }
+    .svg-texts-small {
+        font-size: clamp(20px, 1.5vmax, 30px);
+    }
+    /* HEADER ------------PICTURE OF ME ON THE RIGHT --------------------------- END*/
+    /* NAV -------------MAIN NAVIGATION --------------------------- START*/
+    #hamburger-con {
+        display: block;
+    }
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: -20vw;
+        height: 100vh;
+        width: 20vw;
+        transition: all .3s;
+        background-image: -o-radial-gradient(at 80% 80%, #151929 0%, #111424 36%, #000000 70%);
+        background-image: radial-gradient(at 80% 80%, #151929 0%, #111424 36%, #000000 70%);
+        z-index: 20;
+    }
+    .nav-bar.clicked {
+        right: 0;
+    }
+    #nav-bar ul {
+        width: 100%;
+        height: 100%;
+        padding-left: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5%;
+    }
+    #nav-bar ul li span {
+        font-size: clamp(25px, 4.3vmin, 34px);
+    }
+    /* NAV -------------MAIN NAVIGATION --------------------------- END*/
+    
+    /* SECTIONS ------------GENERAL STYLES FOR SECTIONS --------------------------- START*/
+    section.subtopic-sections {
+        width: 100%;
+        scroll-margin-top: -1px;
+    }
+    /* SECTIONS ------------GENERAL STYLES FOR SECTIONS --------------------------- END*/
+    /* NAV -------------SECTION ABOUT ME --------------------------- START*/
+    section#section-about-me,
+    section#section-my-work,
+    section#section-tech-stack,
+    section#section-contact {
+        height: 100vh;
+    }
+    section#section-about-me .text-box h3,
+    section#section-my-work .description-box h3 {
+        font-size: clamp(30px, 3.5vmin, 40px);
+    }
+    section#section-about-me .text-box p,
+    section#section-my-work .description-box p {
+        margin-top: 2%;
+        font-size: clamp(10px, 2.5vmin, 25px);
+    }
+    section#section-about-me .location-box p {
+        font-size: 15px;
+        font-size: 10px;
+    }
+    /* NAV -------------SECTION ABOUT ME --------------------------- END*/
+    .location-box {
+        top: 10%;
+        left: clamp(20px, 3%, 50px);
+        max-width: 360px;
+        width: 15%;
+        width: 200px;
+        width: clamp(200px, 15%, 350px);
+        height: 50%;
+    }
+    .github-box {
+        top: 65%;
+        left: clamp(20px, 3%, 50px);
+        max-width: 360px;
+        width: 15%;
+        width: clamp(200px, 15%, 350px);
+        height: 25%;
+    }
+    .text-box {
+        top: 10%;
+        left: clamp(250px, 25%, 575px);
+        max-width: 1200px;
+        width: 60%;
+        height: 80%;
+    }
+    .description-box {
+        max-width: 1200px;
+        width: 100%;
+    }
+    .work-menu-con,
+    .tech-menu-incoming {
+        max-width: 720px;
+        width: 25%;
+    }
+    .example-buttons {
+        width: 70%;
+        height: 40%;
+    }
+    .description-box {
+        height: 80%;
+        width: 100%;
+        top: 10%;
+        left: 0;
+        -webkit-perspective: 800px;
+                perspective: 800px;
+    }
+    .work-description-con,
+    .tech-stack-con {
+        width: 60%;
+    }
+    .incoming-container {
+        position: static !important;
+        width: 95%;
+        height: 90%;
+        flex-wrap: wrap;
+        padding: 2% 5%;
+        text-align: center;
+        gap: 5%;
+    }
+    
+    .description-con h4 {
+        font-size: 1vmax;
+    }
+    .sub-contact-container:nth-child(1) {
+        font-size: clamp(15px, 1.5vmax, 25px);
+    }
+    .sub-contact-container:nth-child(2),
+    .sub-contact-container:nth-child(3) {
+        font-size: clamp(35px, 2.5vmax, 45px);
+        font-size: clamp(25px, 2vmax, 35px);
+    }
+    .sub-contact-container a {
+        color: var(--accent-color);
+    }
+    section#section-contact {
+        /* -ms-flex-pack: center !important; */
+        justify-content: center !important;
+    }
+    #contact-container {
+        width: 60%;
+        margin: 0;
+    }
+    
+    }
