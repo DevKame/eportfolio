@@ -15,7 +15,6 @@ secondHeadline.style.opacity = "1";
 
 //---------------------------------------------MEDIA QUERRIES-----------START
 let screen_smaller_than_1200px = window.matchMedia("(max-width:1200px)").matches;
-console.log(screen_smaller_than_1200px);
 //---------------------------------------------MEDIA QUERRIES-----------END
 
 let body = document.querySelector("body");
@@ -62,20 +61,13 @@ let section_contact = document.getElementById("section-contact");
 window.addEventListener("resize", () => {
     header = document.querySelector("header");
     navbar = document.getElementById("nav-bar");
-    console.log("navHeight ALT:", navHeight);
     navHeight = navbar.offsetHeight;
-    console.log("navHeight NEU:", navHeight);
-    console.log("headerHeight ALT:", headerHeight);
     headerHeight = header.offsetHeight;
-    console.log("headerHeight NEU:", headerHeight);
-    console.log("switchPoint ALT:", switchPoint);
     switchPoint = +((headerHeight / 2).toFixed(0));
-    console.log("switchPoint NEU:", switchPoint);
 
 });
 window.addEventListener("scroll", () => {
     // WHERE IS THE SWITCHING SIZES POINT?
-    console.clear();
     if(hamburger.classList.contains("clicked"))
     {
         hamburger.classList.remove("clicked");
@@ -139,41 +131,28 @@ window.addEventListener("scroll", () => {
         sidebar.style.opacity = "0";
         sidebar.style.pointerEvents = "none";
     }
-    console.log(sidebar.style.opacity);
-    console.log(sidebar.style.pointerEvents);
     // ------------------------------------------SIDEBAR FADE IN AND OUT----------END
     // ------------------------------------------FOCUSSING THE LINKS OF NAVBAR ONSCROLL----------START
     navLinks.forEach(link => {
         link.classList.remove("focus");
     });
-    console.log(tStackBox.top, tStackBox.bottom);
-    console.log(ctBox.top, ctBox.bottom);
-    console.log(navHeight * .7);
 
     if(!screen_smaller_than_1200px)
     {
         if(abMeBox.top <= (navHeight * 1.1) && abMeBox.bottom > navHeight)
         {
-            console.log("ersteSec drin");
-            // focusLink(navLinks[0]);
             navLinks[0].classList.add("focus");
         }
         else if(mWrkBox.top <= (navHeight * 1.1) && mWrkBox.bottom > navHeight)
         {
-            console.log("zweiteSec drin");
-            // focusLink(navLinks[1]);
             navLinks[1].classList.add("focus");
         }
         else if(tStackBox.top <= (navHeight * 1.1) && tStackBox.bottom > navHeight * 1.2)
         {
-            console.log("dritteSec drin");
-            // focusLink(navLinks[2]);
             navLinks[2].classList.add("focus");
         }
         else if(ctBox.top <= (navHeight * 1.1) && ctBox.bottom > navHeight)
         {
-            console.log("vierteSec drin");
-            // focusLink(navLinks[3]);
             navLinks[3].classList.add("focus");
         }
     }
@@ -181,26 +160,18 @@ window.addEventListener("scroll", () => {
     {
         if(abMeBox.top <= 50 && abMeBox.bottom >= 100)
         {
-            console.log("smallDevice => ersteSec drin");
-            // focusLink(navLinks[0]);
             navLinks[0].classList.add("focus");
         }
         else if(mWrkBox.top <= 50 && mWrkBox.bottom >= 100)
         {
-            console.log("smallDevice => zweiteSec drin");
-            // focusLink(navLinks[1]);
             navLinks[1].classList.add("focus");
         }
         else if(tStackBox.top <= 50 && tStackBox.bottom >= 100)
         {
-            console.log("smallDevice => dritteSec drin");
-            // focusLink(navLinks[2]);
             navLinks[2].classList.add("focus");
         }
         else if(ctBox.top <= 50 && ctBox.bottom >= 0)
         {
-            console.log("smallDevice => vierteSec drin");
-            // focusLink(navLinks[3]);
             navLinks[3].classList.add("focus");
         }
     }
@@ -211,7 +182,6 @@ window.addEventListener("scroll", () => {
 //------------------------------------------3D EFFECT WHEN HOVERING WITH MOUSE--------START
 
 const abMe_textBox_hover = function(e) {
-    console.clear();
     if(allPs && allSpans)
     {
 
@@ -238,7 +208,6 @@ const abMe_textBox_hover = function(e) {
             let spanBound = p.getBoundingClientRect();
             if(e.clientY > (spanBound.top - 10) && e.clientY < (spanBound.bottom +10))
             {
-                console.log("Die Maus is über diesem span:", p);
                 if(e.clientX > spanBound.left && e.clientX < spanBound.right)
                 {
                     p.classList.add("hovered-accent-color");
@@ -258,17 +227,10 @@ const abMe_textBox_hover = function(e) {
 
     let height = e.target.offsetHeight;
     let width = e.target.offsetWidth;
-    console.log("Höhe Box:", height);
-    console.log("Breite Box:", width);
     let xRotate, yRotate;
-    console.log("Maus-X:", e.offsetX);
-    console.log("Maus-Y:", e.offsetY);
 
     let relativeMouseX = (e.offsetX *100) / width;
     let relativeMouseY = (e.offsetY *100) / height;
-
-    console.log("Prozent Maus-X:", relativeMouseX);
-    console.log("Prozent Maus-Y:", relativeMouseY);
 
 
     if(relativeMouseX < 50)
@@ -310,20 +272,12 @@ textBox.addEventListener("mouseleave", e => {
 
 //Hover effect for the work-example buttons:
 const ex_btns_hover = function(e) {
-    console.clear();
     let height = e.target.offsetHeight;
     let width = e.target.offsetWidth;
-    console.log("Höhe Box:", height);
-    console.log("Breite Box:", width);
     let xRotate, yRotate;
-    console.log("Maus-X:", e.offsetX);
-    console.log("Maus-Y:", e.offsetY);
 
     let relativeMouseX = (e.offsetX *100) / width;
     let relativeMouseY = (e.offsetY *100) / height;
-
-    console.log("Prozent Maus-X:", relativeMouseX);
-    console.log("Prozent Maus-Y:", relativeMouseY);
 
 
     if(relativeMouseX < 50)
@@ -358,14 +312,12 @@ const ex_btns_hover = function(e) {
         if(e.clientX > ex_bound.left && e.clientX < ex_bound.right)
         {
             body.style.cursor = "pointer";
-            console.log("ist überm normalo link")
             example_link.style.transform = "translateZ(150px)";
             example_link.style.filter = "drop-shadow(0 0 5px black)";
 
             linkInfo.style.display = "block";
             linkInfo.style.top = scrollY + e.clientY + 30 + "px";
             linkInfo.style.left = scrollX + e.clientX + 50 + "px";
-            console.table(e.target.classList);
             if(e.target.classList.contains("vocab-trainer-button"))
             {
                 linkInfo.innerText = "Open 'vocabs.kamed.in'";
@@ -453,7 +405,6 @@ all_example_buttons.forEach(el => {
         });
     });
     el.addEventListener("click", e => {
-        console.log(e.target);
         let example_link = e.target.querySelector(".links-to-examples");
         let ex_bound = example_link.getBoundingClientRect();
         let git_link = e.target.querySelector(".links-to-git");
@@ -515,7 +466,6 @@ navLinks.forEach(link => {
                 scrollToValue = (scrollY + section_aboutMe.getBoundingClientRect().top) - navHeight;
                 if(screen_smaller_than_1200px)
                 {
-                    console.log("Screen ist kleiner als 1200px");
                     scrollToValue = scrollY + section_aboutMe.getBoundingClientRect().top;
                 }
                 scrollTo(0, scrollToValue);
@@ -524,7 +474,6 @@ navLinks.forEach(link => {
                 scrollToValue = (scrollY + section_myWork.getBoundingClientRect().top) - navHeight;
                 if(screen_smaller_than_1200px)
                 {
-                    console.log("Screen ist kleiner als 1200px");
                     scrollToValue = scrollY + section_myWork.getBoundingClientRect().top;
                 }
                 scrollTo(0, scrollToValue);
@@ -533,7 +482,6 @@ navLinks.forEach(link => {
                 scrollToValue = (scrollY + section_techStack.getBoundingClientRect().top) - navHeight;
                 if(screen_smaller_than_1200px)
                 {
-                    console.log("Screen ist kleiner als 1200px");
                     scrollToValue = scrollY + section_techStack.getBoundingClientRect().top;
                 }
                 scrollTo(0, scrollToValue);
@@ -542,7 +490,6 @@ navLinks.forEach(link => {
                 scrollToValue = (scrollY + section_contact.getBoundingClientRect().top) - navHeight;
                 if(screen_smaller_than_1200px)
                 {
-                    console.log("Screen ist kleiner als 1200px");
                     scrollToValue = scrollY + section_contact.getBoundingClientRect().top;
                 }
                 scrollTo(0, scrollToValue);
@@ -566,101 +513,3 @@ const toggleHamburger = function(e) {
     }
 }
 hamburger.addEventListener("click", toggleHamburger);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let example_link = e.target.querySelector(".links-to-examples");
-//     let ex_bound = example_link.getBoundingClientRect();
-
-//     //makes the link to the particular example hover:
-//     if(e.clientY > ex_bound.top && e.clientY < ex_bound.bottom)
-//     {
-//         if(e.clientX > ex_bound.left && e.clientX < ex_bound.right)
-//         {
-//             console.log("ist überm normalo link")
-//             example_link.style.transform = "translateZ(150px)";
-//             example_link.style.filter = "drop-shadow(0 0 5px black)";
-
-//             linkInfo.style.display = "block";
-//             linkInfo.style.top = scrollY + e.clientY + 30 + "px";
-//             linkInfo.style.left = scrollX + e.clientX + 50 + "px";
-//         }
-//         else
-//         {
-//             example_link.style.transform = "";
-//             example_link.style.filter = "";
-//             linkInfo.style.display = "none";
-
-//         }
-//     }
-//     else
-//     {
-//         example_link.style.transform = "";
-//         example_link.style.filter = "";
-//         linkInfo.style.display = "none";
-//     }
-
-//     let git_link = e.target.querySelector(".links-to-git");
-//     let git_bound = git_link.getBoundingClientRect();
-
-//     //makes the link to the particular git-repository hover:
-//     if(e.clientY > git_bound.top && e.clientY < git_bound.bottom)
-//     {
-//         if(e.clientX > git_bound.left && e.clientX < git_bound.right)
-//         {
-//             git_link.style.transform = "translateZ(150px)";
-//             git_link.style.filter = "drop-shadow(0 0 5px black)";
-//             linkInfo.style.display = "block";
-//             linkInfo.style.top = scrollY + e.clientY + 30 + "px";
-//             linkInfo.style.left = scrollX + e.clientX + 50 + "px";
-//         }
-//         else
-//         {
-//             git_link.style.transform = "";
-//             git_link.style.filter = "";
-//             linkInfo.style.display = "none";
-
-//         }
-//     }
-//     else
-//     {
-//         git_link.style.transform = "";
-//         git_link.style.filter = "";
-//         linkInfo.style.display = "none";
-//     }
