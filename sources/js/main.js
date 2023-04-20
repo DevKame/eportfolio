@@ -21,6 +21,7 @@ console.log(screen_smaller_than_1200px);
 let body = document.querySelector("body");
 
 let header = document.querySelector("header");
+let hamburger = document.getElementById("hamburger-con");
 let navbar = document.getElementById("nav-bar");
 let navbarData = navbar.getBoundingClientRect();
 
@@ -32,6 +33,10 @@ let navHeight = navbar.offsetHeight;
 let headerHeight = header.offsetHeight;
 let header_sticky_top = -(headerHeight - navHeight - 1);
 header.style.top = header_sticky_top + "px";
+
+
+//adjust after resize:
+let switchPoint = +((headerHeight / 2).toFixed(0));
 
 let img_me = document.getElementById("header-img-con");
 let is_big = true;
@@ -54,20 +59,36 @@ let section_contact = document.getElementById("section-contact");
 
 
 
-let widthInd = document.getElementById("widthInd");
 window.addEventListener("resize", () => {
-    widthInd.innerText = innerWidth + "px";
+    header = document.querySelector("header");
+    navbar = document.getElementById("nav-bar");
+    console.log("navHeight ALT:", navHeight);
+    navHeight = navbar.offsetHeight;
+    console.log("navHeight NEU:", navHeight);
+    console.log("headerHeight ALT:", headerHeight);
+    headerHeight = header.offsetHeight;
+    console.log("headerHeight NEU:", headerHeight);
+    console.log("switchPoint ALT:", switchPoint);
+    switchPoint = +((headerHeight / 2).toFixed(0));
+    console.log("switchPoint NEU:", switchPoint);
+
 });
 window.addEventListener("scroll", () => {
     // WHERE IS THE SWITCHING SIZES POINT?
     console.clear();
+    if(hamburger.classList.contains("clicked"))
+    {
+        hamburger.classList.remove("clicked");
+    }
+    if(navbar.classList.contains("clicked"))
+    {
+        navbar.classList.remove("clicked");
+    }
     let abMeBox = section_aboutMe.getBoundingClientRect();
     let mWrkBox = section_myWork.getBoundingClientRect();
     let tStackBox = section_techStack.getBoundingClientRect();
     let ctBox = section_contact.getBoundingClientRect();
 
-    //adjust after resize:
-    let switchPoint = +((headerHeight / 2).toFixed(0));
     // WHERE IS THE SWITCHING SIZES POINT?
 
     let svgTexts = document.querySelectorAll(".svg-text-cons text");
@@ -532,7 +553,6 @@ navLinks.forEach(link => {
 //------------------------------------------3D EFFECT WHEN HOVERING WITH MOUSE--------END
 
 //EVERYTHING UNDER 1200px WIDTH:
-let hamburger = document.getElementById("hamburger-con");
 const toggleHamburger = function(e) {
     if(e.target.classList.contains("clicked"))
     {

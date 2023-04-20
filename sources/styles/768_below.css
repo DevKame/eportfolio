@@ -80,6 +80,7 @@
     /* NAV -------------MAIN NAVIGATION --------------------------- START*/
     #hamburger-con {
         display: block;
+        width: 10vw;
     }
     #hamburger-con.clicked {
         right: 50%;
@@ -232,31 +233,69 @@
     }
     /* NAV -------------SECTION MY WORK --------------------------- END*/
     /* NAV -------------SECTION TECH STACK --------------------------- START*/
+    section#section-tech-stack {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tech-menu-incoming {
+        width: 100%;
+        height: 30%;
+        padding: 0;
+        gap: 0;
+    }
     .incoming-container {
         position: static !important;
+        flex-direction: row;
         width: 95%;
         height: 90%;
-        flex-wrap: wrap;
         padding: 2% 5%;
         text-align: center;
         gap: 5%;
     }
     .incoming-container h3 {
-        font-size: clamp(10px, 1.3vmax, 18px);
+        font-size: clamp(18px, 1vmax, 20px);
     }
     .incoming-container p {
         font-size: clamp(7px, 1.3vmax, 16px);
+    }
+    .tech-stack-con {
+        border: 1px solid white;
+        width: 100%;
     }
     .tech-stack-card .h4-holder {
         transform: translateZ(0);
         opacity: 1;
     }
+    .tech-stack-card:hover .h4-holder {
+        transform: none;
+    }
     #side-bar {
-        align-items: flex-end;
-        padding-right: 10px;
+        /* align-items: flex-end;
+        padding-right: 10px; */
+        top: unset;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        transform: none;
+        flex-direction: row;
+    }
+    #back-to-top-button {
+        width: 15%;
+        width: clamp(30px, 15%, 70px);
+        margin: 0;
+        margin-left: 3%;
+        margin-right: auto;
+    }
+    .sidebar-links {
+        width: 10%;
+        margin: 0;
+    }
+    .sidebar-links:last-child {
+        margin-right: 3%;
     }
     /* NAV -------------SECTION TECH STACK --------------------------- END*/
-    
     .sub-contact-container:nth-child(1) {
         font-size: clamp(15px, 1.5vmax, 25px);
     }
@@ -273,7 +312,7 @@
         justify-content: center !important;
     }
     #contact-container {
-        width: 60%;
+        width: 80%;
         margin: 0;
     }
     
