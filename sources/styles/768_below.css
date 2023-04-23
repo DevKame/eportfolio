@@ -2,6 +2,9 @@
     .nav-bar,header,section#section-about-me,section#section-contact,section#section-my-work,section#section-tech-stack{
         height:100vh
     }
+    body {
+        overflow-x: hidden;
+    }
     header{
         position:static
     }
