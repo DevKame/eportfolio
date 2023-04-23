@@ -1,319 +1,316 @@
-
-
-
-@media screen and (max-width: 768px) {
-    /* HEADER ------------HEADLINES ON THE LEFT --------------------------- START*/
-    header {
-        position: static;
-        height: 100vh;
+@media screen and (max-width:768px){
+    .nav-bar,header,section#section-about-me,section#section-contact,section#section-my-work,section#section-tech-stack{
+        height:100vh
     }
-    .hl-con {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: clamp(800px, 55%, 1000px);
-        aspect-ratio: 3;
-        /* border: 1px solid red; */
-        justify-content: flex-start;
-        text-align: center;
+    header{
+        position:static
     }
-    .hl-texts {
-        font-size: clamp(45px, 5vmax, 50px);
+    .hl-con{
+        top:0;
+        left:50%;
+        -webkit-transform:translateX(-50%);
+        -ms-transform:translateX(-50%);
+        transform:translateX(-50%);
+        width:clamp(800px,55%,1000px);
+        aspect-ratio:3;
+        -webkit-box-pack:start;
+        -ms-flex-pack:start;
+        justify-content:flex-start;
+        text-align:center
     }
-    .hl-prim-rows {
-        justify-content: center !important;
-        /* border: 1px solid green; */
+    .hl-texts{
+        font-size:clamp(45px, 5vmax, 50px)
     }
-    .sec-row-con {
-        position: relative;
+    .hl-prim-rows,section#section-contact{
+        -webkit-box-pack:center!important;
+        -ms-flex-pack:center!important;
+        justify-content:center!important
     }
-    .hl-sec-rows {
-        position: absolute;
-        justify-content: center;
-        /* border: 1px solid rebeccapurple; */
-        animation: none;
+    .sec-row-con{
+        position:relative
     }
-    .hl-sec-rows:first-child {
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -200%);
-        animation: scroll-in-anim-first 1.5s 1;
+    .hl-sec-rows{
+        position:absolute;
+        -webkit-box-pack:center;
+        -ms-flex-pack:center;
+        justify-content:center;
+        -webkit-animation:none;
+        animation:none
     }
-    .hl-sec-rows:nth-child(2) {
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -100%);
-        animation: scroll-in-anim-second 1.5s 1;
+    .hl-sec-rows:first-child{
+        top:0;
+        left:50%;
+        -webkit-transform:translate(-50%,-200%);
+        -ms-transform:translate(-50%,-200%);
+        transform:translate(-50%,-200%);
+        -webkit-animation:1.5s scroll-in-anim-first;
+        animation:1.5s scroll-in-anim-first
     }
-    .hl-sec-rows:last-child {
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, 0);
-        animation: scroll-in-anim-third 1.5s 1;
+    .hl-sec-rows:nth-child(2){
+        top:0;
+        left:50%;
+        -webkit-transform:translate(-50%,-100%);
+        -ms-transform:translate(-50%,-100%);
+        transform:translate(-50%,-100%);
+        -webkit-animation:1.5s scroll-in-anim-second;
+        animation:1.5s scroll-in-anim-second
     }
-    /* HEADER ------------HEADLINES ON THE LEFT --------------------------- END*/
-    
-    /* HEADER ------------PICTURE OF ME ON THE RIGHT --------------------------- START*/
-    .header-img-con-big {
-        width: clamp(300px, 40%, 400px);
-        right: 50% !important;
-        bottom: 0 !important;
-        transform: translateX(50%);
+    .hl-sec-rows:last-child{
+        top:0;
+        left:50%;
+        -webkit-transform:translate(-50%,0);
+        -ms-transform:translate(-50%,0);
+        transform:translate(-50%,0);
+        -webkit-animation:1.5s scroll-in-anim-third;
+        animation:1.5s scroll-in-anim-third
     }
-    .header-img-con-big .img-me-con > img {
-        height: 65%;
+    .header-img-con-big{
+        width:clamp(300px,40%,400px);
+        right:50%!important;
+        bottom:0!important;
+        -webkit-transform:translateX(50%);
+        -ms-transform:translateX(50%);
+        transform:translateX(50%)
     }
-    .header-img-con-small {
-        width: 7%;
+    .header-img-con-big .img-me-con>img{
+        height:65%
     }
-    .navbar-img-con {
-        width: clamp(175px, 10%, 225px);
+    .header-img-con-small{
+        width:7%
     }
-    .svg-texts-big {
-        font-size: clamp(60px, 9vmax, 90px);
-        /* font-size: 8vmax; */
+    .navbar-img-con{
+        width:clamp(175px,10%,225px)
     }
-    .svg-texts-small {
-        font-size: clamp(20px, 1.5vmax, 30px);
+    .svg-texts-big{
+        font-size:clamp(60px, 9vmax, 90px)
     }
-    /* HEADER ------------PICTURE OF ME ON THE RIGHT --------------------------- END*/
-    /* NAV -------------MAIN NAVIGATION --------------------------- START*/
-    #hamburger-con {
-        display: block;
-        width: 10vw;
+    .svg-texts-small{
+        font-size:clamp(20px, 1.5vmax, 30px)
     }
-    #hamburger-con.clicked {
-        right: 50%;
+    #hamburger-con{
+        display:block;
+        width:10vw;
+        right:unset;
+        left:90vw;
     }
-    .nav-bar {
-        position: fixed;
-        top: 0;
-        right: -50vw;
-        height: 100vh;
-        width: 50vw;
-        transition: all .3s;
-        background-image: -o-radial-gradient(at 80% 80%, #151929 0%, #111424 36%, #000000 70%);
-        background-image: radial-gradient(at 80% 80%, #151929 0%, #111424 36%, #000000 70%);
-        z-index: 20;
+    #hamburger-con.clicked{
+        right:unset;
+         left:40%;
     }
-    .nav-bar.clicked {
-        right: 0;
+    .nav-bar{
+        position:fixed;
+        top:0;
+        right:unset;
+        left:100vw;
+        width:50vw;
+        -webkit-transition:.3s;
+        -o-transition:.3s;
+        transition:.3s;
+        background-image:-o-radial-gradient(at 80% 80%,#151929 0,#111424 36%,#000 70%);
+        background-image:radial-gradient(at 80% 80%,#151929 0,#111424 36%,#000 70%);
+        z-index:20
     }
-    #nav-bar ul {
-        width: 100%;
-        height: 100%;
-        padding-left: 2%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        gap: 5%;
+    .nav-bar.clicked{
+        right:unset;
+        left:50vw;
     }
-    #nav-bar ul li span {
-        font-size: clamp(25px, 4.3vmin, 34px);
+    #nav-bar ul{
+        width:100%;
+        height:100%;
+        padding-left:2%;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+        flex-direction:column;
+        -ms-flex-pack:distribute;
+        justify-content:space-around;
+        -webkit-box-align:center;
+        -ms-flex-align:center;
+        align-items:center;
+        gap:5%
     }
-    /* NAV -------------MAIN NAVIGATION --------------------------- END*/
-    
-    /* SECTIONS ------------GENERAL STYLES FOR SECTIONS --------------------------- START*/
-    section.subtopic-sections {
-        width: 100%;
-        scroll-margin-top: -1px;
-        border: 1px solid red;
+    #nav-bar ul li span{
+        font-size:clamp(25px, 4.3vmin, 34px)
     }
-    /* SECTIONS ------------GENERAL STYLES FOR SECTIONS --------------------------- END*/
-    /* NAV -------------SECTION ABOUT ME --------------------------- START*/
-    section#section-about-me,
-    section#section-my-work,
-    section#section-tech-stack,
-    section#section-contact {
-        height: 100vh;
+    section.subtopic-sections{
+        width:100%;
+        scroll-margin-top:-1px;
     }
-    section#section-about-me .text-box h3,
-    section#section-my-work .description-box h3 {
-        font-size: clamp(30px, 3.5vmin, 40px);
+    section#section-about-me .text-box h3,section#section-my-work .description-box h3{
+        font-size:clamp(30px, 3.5vmin, 40px)
     }
-    section#section-about-me .text-box p,
-    section#section-my-work .description-box p {
-        margin-top: 2%;
-        font-size: clamp(10px, 2.5vmin, 25px);
+    section#section-about-me .text-box p,section#section-my-work .description-box p{
+        margin-top:2%;
+        font-size:clamp(10px, 2.5vmin, 25px)
     }
-    section#section-about-me .location-box p {
-        font-size: 15px;
-        font-size: 10px;
+    section#section-about-me .location-box p{
+        font-size:10px
     }
-    /* NAV -------------SECTION ABOUT ME --------------------------- END*/
-    .location-box {
-        top: 2%;
-        left: 1%;
-        max-width: unset;
-        width: 98%;
-        height: 20%;
-        flex-direction: row !important;
+    .location-box{
+        top:2%;
+        left:1%;
+        max-width:unset;
+        width:98%;
+        height:20%;
+        -webkit-box-orient:horizontal!important;
+        -webkit-box-direction:normal!important;
+        -ms-flex-direction:row!important;
+        flex-direction:row!important
     }
-    .location-box .info-con {
-        width: 30% !important;
-        height: 95%;
-        margin-top: unset !important;
-        margin-left: 3%;
-        margin-right: auto;
+    #side-bar,.incoming-container{
+        -webkit-box-orient:horizontal
     }
-    .location-box .img-con {
-        min-width: 110px !important;
-        width: 20% !important;
-        height: 95% !important;
-        /* border: 1px solid white; */
-        margin-right: 40%;
-        margin-bottom: unset !important;
-        margin-top: unset !important;
+    #side-bar,.incoming-container,section#section-tech-stack{
+        -webkit-box-direction:normal
     }
-    .github-box {
-        top: 3%;
-        left: unset;
-        right: 3%;
-        max-width: unset;
-        width: 20%;
-        height: unset;
-        height: 18%;
+    .location-box .info-con{
+        width:30%!important;
+        height:95%;
+        margin-top:unset!important;
+        margin-left:3%;
+        margin-right:auto
     }
-    .github-box .github-logo {
-        width: 60% !important;
+    .location-box .img-con{
+        min-width:110px!important;
+        width:20%!important;
+        height:95%!important;
+        margin-right:40%;
+        margin-bottom:unset!important;
+        margin-top:unset!important
     }
-    .text-box {
-        top: 24%;
-        left: 1%;
-        max-width: unset;
-        width: 98%;
-        height: 70%;
-        justify-content: center !important;
+    .github-box{
+        top:3%;
+        left:unset;
+        right:3%;
+        max-width:unset;
+        width:20%;
+        height:18%
     }
-    /* NAV -------------SECTION MY WORK --------------------------- START*/
-
-    /* .description-box {
-        max-width: 1200px;
-        width: 100%;
-    } */
-    .work-menu-con,
-    .tech-menu-incoming {
-        max-width: 720px;
-        width: 25%;
+    .github-box .github-logo{
+        width:60%!important
     }
-    .work-menu-con {
-        max-width: unset;
-        width: 100%;
-        height: 100%;
-        flex-wrap: nowrap;
-        padding: 0;
-        border: 1px solid white;
+    .text-box{
+        top:24%;
+        left:1%;
+        max-width:unset;
+        width:98%;
+        height:70%;
+        -webkit-box-pack:center!important;
+        -ms-flex-pack:center!important;
+        justify-content:center!important
     }
-    .example-buttons {
-        width: 45%;
-        height: unset !important;
-        aspect-ratio: .7 !important;
+    .tech-menu-incoming,.work-menu-con{
+        max-width:720px
     }
-    .description-con {
-        background-color: rgba(51, 61, 92, .7);
+    .work-menu-con{
+        max-width:unset;
+        width:100%;
+        height:100%;
+        -ms-flex-wrap:nowrap;
+        flex-wrap:nowrap;
+        padding:0;
     }
-    .description-con h4 {
-        font-size: 2vmax;
+    .example-buttons{
+        width:45%;
+        height:unset!important;
+        aspect-ratio:.7!important
     }
-    /* .description-box {
-        height: 80%;
-        width: 100%;
-        top: 10%;
-        left: 0;
-        -webkit-perspective: 800px;
-                perspective: 800px;
-    } */
-    .work-description-con,
-    .tech-stack-con {
-        width: 60%;
+    .description-con{
+        background-color:rgba(51,61,92,.7)
     }
-    .work-description-con {
-        display: none;
+    .description-con h4{
+        font-size:2vmax
     }
-    /* NAV -------------SECTION MY WORK --------------------------- END*/
-    /* NAV -------------SECTION TECH STACK --------------------------- START*/
-    section#section-tech-stack {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .tech-stack-con,.work-description-con{
+        width:60%
     }
-    .tech-menu-incoming {
-        width: 100%;
-        height: 30%;
-        padding: 0;
-        gap: 0;
+    .work-description-con{
+        display:none
     }
-    .incoming-container {
-        position: static !important;
-        flex-direction: row;
-        width: 95%;
-        height: 90%;
-        padding: 2% 5%;
-        text-align: center;
-        gap: 5%;
+    section#section-tech-stack{
+        -webkit-box-orient:vertical;
+        -ms-flex-direction:column;
+        flex-direction:column;
+        -webkit-box-pack:center;
+        -ms-flex-pack:center;
+        justify-content:center;
+        -webkit-box-align:center;
+        -ms-flex-align:center;
+        align-items:center
     }
-    .incoming-container h3 {
-        font-size: clamp(18px, 1vmax, 20px);
+    .tech-menu-incoming{
+        width:100%;
+        height:30%;
+        padding:0;
+        gap:0
     }
-    .incoming-container p {
-        font-size: clamp(7px, 1.3vmax, 16px);
+    .incoming-container{
+        position:static!important;
+        -ms-flex-direction:row;
+        flex-direction:row;
+        width:95%;
+        height:90%;
+        padding:2% 5%;
+        text-align:center;
+        gap:5%
     }
-    .tech-stack-con {
-        border: 1px solid white;
-        width: 100%;
+    .incoming-container h3{
+        font-size:clamp(18px, 1vmax, 20px)
     }
-    .tech-stack-card .h4-holder {
-        transform: translateZ(0);
-        opacity: 1;
+    .incoming-container p{
+        font-size:clamp(7px, 1.3vmax, 16px)
     }
-    .tech-stack-card:hover .h4-holder {
-        transform: none;
+    .tech-stack-con{
+        width:100%
     }
-    #side-bar {
-        /* align-items: flex-end;
-        padding-right: 10px; */
-        top: unset;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 15%;
-        transform: none;
-        flex-direction: row;
+    .tech-stack-card .h4-holder{
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0);
+        opacity:1
     }
-    #back-to-top-button {
-        width: 15%;
-        width: clamp(30px, 15%, 70px);
-        margin: 0;
-        margin-left: 3%;
-        margin-right: auto;
+    .tech-stack-card:hover .h4-holder{
+        -webkit-transform:none;
+        -ms-transform:none;
+        transform:none
     }
-    .sidebar-links {
-        width: 10%;
-        margin: 0;
+    #side-bar{
+        top:unset;
+        bottom:0;
+        left:2.5vw;
+        width:95vw;
+        height:15%;
+        -webkit-transform:none;
+        -ms-transform:none;
+        transform:none;
+        -ms-flex-direction:row;
+        flex-direction:row
     }
-    .sidebar-links:last-child {
-        margin-right: 3%;
+    #back-to-top-button{
+        width:15%;
+        width:clamp(30px,15%,70px);
+        margin:0 auto 0 3%
     }
-    /* NAV -------------SECTION TECH STACK --------------------------- END*/
-    .sub-contact-container:nth-child(1) {
-        font-size: clamp(15px, 1.5vmax, 25px);
+    .sidebar-links{
+        width:10%;
+        margin:0
     }
-    .sub-contact-container:nth-child(2),
-    .sub-contact-container:nth-child(3) {
-        font-size: clamp(35px, 2.5vmax, 45px);
-        font-size: clamp(25px, 2vmax, 35px);
+    .sidebar-links:last-child{
+        margin-right:3%
     }
-    .sub-contact-container a {
-        color: var(--accent-color);
+    .sub-contact-container:first-child{
+        font-size:clamp(15px, 1.5vmax, 25px)
     }
-    section#section-contact {
-        /* -ms-flex-pack: center !important; */
-        justify-content: center !important;
+    .sub-contact-container:nth-child(2),.sub-contact-container:nth-child(3){
+        font-size:clamp(25px, 2vmax, 35px)
     }
-    #contact-container {
-        width: 80%;
-        margin: 0;
+    .sub-contact-container a{
+        color:var(--accent-color)
     }
-    
+    #contact-container{
+        width:80%;
+        margin:0
     }
+}
