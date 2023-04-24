@@ -32,7 +32,7 @@
     margin:0;
     padding:0;
     -webkit-box-sizing:border-box;
-    box-sizing:border-box;
+    box-sizing: border-box;
     outline:0;
     outline-offset:0;
     font-family:Ebrima,Arial,sans-serif;
@@ -223,11 +223,10 @@ a.header-img-con-small{
 #nav-bar ul li span.focus::before,#nav-bar ul li span:hover::before{
     top:0;
     background-color:var(--accent-color);
-    border:1px solid var(--accent-color)
+    border:1px solid var(--accent-color);
 }
 section.subtopic-sections{
-    width:100%;
-    scroll-margin-top:15vh
+    scroll-margin-top:15vh;
 }
 .box-containers{
     position:absolute;

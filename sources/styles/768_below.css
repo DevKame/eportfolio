@@ -3,10 +3,11 @@
         height:100vh
     }
     body {
+        width: 100vw;
         overflow-x: hidden;
     }
     header{
-        position:static
+        position:static;
     }
     .hl-con{
         top:0;
@@ -139,7 +140,6 @@
         font-size:clamp(25px, 4.3vmin, 34px)
     }
     section.subtopic-sections{
-        width:100%;
         scroll-margin-top:-1px;
     }
     section#section-about-me .text-box h3,section#section-my-work .description-box h3{
