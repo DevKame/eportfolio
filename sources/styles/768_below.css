@@ -1,4 +1,7 @@
 @media screen and (max-width:768px){
+    html {
+        overflow-x: hidden;
+    }
     .nav-bar,header,section#section-about-me,section#section-contact,section#section-my-work,section#section-tech-stack{
         height:100vh;
     }
