@@ -19,12 +19,15 @@ let screen_smaller_than_1200px = window.matchMedia("(max-width:1200px)").matches
 
 let body = document.querySelector("body");
 
+let sec_navbar = document.getElementById("sec-nav-bar");
+console.log(sec_navbar);
 let header = document.querySelector("header");
 let hamburger = document.getElementById("hamburger-con");
 let navbar = document.getElementById("nav-bar");
 let navbarData = navbar.getBoundingClientRect();
 
 let navLinks = document.querySelectorAll("#nav-bar > ul > li > span");
+let sec_navLinks = document.querySelectorAll("#sec-nav-bar > ul > li > span");
 
 //adjust after resize:
 let navHeight = navbar.offsetHeight;
@@ -75,6 +78,10 @@ window.addEventListener("scroll", () => {
     if(navbar.classList.contains("clicked"))
     {
         navbar.classList.remove("clicked");
+    }
+    if(sec_navbar.classList.contains("clicked"))
+    {
+        sec_navbar.classList.remove("clicked");
     }
     let abMeBox = section_aboutMe.getBoundingClientRect();
     let mWrkBox = section_myWork.getBoundingClientRect();
@@ -134,6 +141,9 @@ window.addEventListener("scroll", () => {
     // ------------------------------------------SIDEBAR FADE IN AND OUT----------END
     // ------------------------------------------FOCUSSING THE LINKS OF NAVBAR ONSCROLL----------START
     navLinks.forEach(link => {
+        link.classList.remove("focus");
+    });
+    sec_navLinks.forEach(link => {
         link.classList.remove("focus");
     });
 
@@ -497,6 +507,46 @@ navLinks.forEach(link => {
         }
     });
 });
+sec_navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+        let scrollToValue;
+        switch(e.target.innerText)
+        {
+            case "ABOUT ME":
+                scrollToValue = (scrollY + section_aboutMe.getBoundingClientRect().top) - navHeight;
+                if(screen_smaller_than_1200px)
+                {
+                    scrollToValue = scrollY + section_aboutMe.getBoundingClientRect().top;
+                }
+                scrollTo(0, scrollToValue);
+                break;
+            case "MY WORK":
+                scrollToValue = (scrollY + section_myWork.getBoundingClientRect().top) - navHeight;
+                if(screen_smaller_than_1200px)
+                {
+                    scrollToValue = scrollY + section_myWork.getBoundingClientRect().top;
+                }
+                scrollTo(0, scrollToValue);
+                break;
+            case "TECH STACK":
+                scrollToValue = (scrollY + section_techStack.getBoundingClientRect().top) - navHeight;
+                if(screen_smaller_than_1200px)
+                {
+                    scrollToValue = scrollY + section_techStack.getBoundingClientRect().top;
+                }
+                scrollTo(0, scrollToValue);
+                break;
+            case "CONTACT":
+                scrollToValue = (scrollY + section_contact.getBoundingClientRect().top) - navHeight;
+                if(screen_smaller_than_1200px)
+                {
+                    scrollToValue = scrollY + section_contact.getBoundingClientRect().top;
+                }
+                scrollTo(0, scrollToValue);
+                break;
+        }
+    });
+});
 //------------------------------------------3D EFFECT WHEN HOVERING WITH MOUSE--------END
 
 //EVERYTHING UNDER 1200px WIDTH:
@@ -504,12 +554,12 @@ const toggleHamburger = function(e) {
     if(e.target.classList.contains("clicked"))
     {
         e.target.classList.remove("clicked");
-        navbar.classList.remove("clicked");
+        sec_navbar.classList.remove("clicked");
     }
     else
     {
         e.target.classList.add("clicked");
-        navbar.classList.add("clicked");
+        sec_navbar.classList.add("clicked");
     }
 }
 hamburger.addEventListener("click", toggleHamburger);

@@ -1,9 +1,59 @@
 @media screen and (max-width:768px){
     .nav-bar,header,section#section-about-me,section#section-contact,section#section-my-work,section#section-tech-stack{
-        height:100vh
+        height:100vh;
     }
+    .nav-bar {
+
+
+
+        display: none;
+
+    }
+    #sec-nav-bar {
+        display: flex;
+    }
+    .sec-nav-bar {
+        display: flex;
+        height:100vh;
+        position:fixed;
+        top:0;
+        right:unset;
+        left:100vw;
+        width:50vw;
+        -webkit-transition:.3s;
+        -o-transition:.3s;
+        transition:.3s;
+        background-image:-o-radial-gradient(at 80% 80%,#151929 0,#111424 36%,#000 70%);
+        background-image:radial-gradient(at 80% 80%,#151929 0,#111424 36%,#000 70%);
+        z-index:20
+    }
+    .sec-nav-bar ul{
+        width:100%;
+        height:100%;
+        padding-left:2%;
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+        flex-direction:column;
+        -ms-flex-pack:distribute;
+        justify-content:space-around;
+        -webkit-box-align:center;
+        -ms-flex-align:center;
+        align-items:center;
+        gap:5%
+    }
+    .sec-nav-bar ul li span{
+        font-size:clamp(20px, 4.3vmin, 26px)
+    }
+    .sec-nav-bar.clicked{
+        right:unset;
+        left:50vw;
+    }
+    
     body {
-        width: 100vw;
         overflow-x: hidden;
     }
     header{
@@ -100,23 +150,6 @@
     #hamburger-con.clicked{
         right:unset;
          left:40%;
-    }
-    .nav-bar{
-        position:fixed;
-        top:0;
-        right:unset;
-        left:100vw;
-        width:50vw;
-        -webkit-transition:.3s;
-        -o-transition:.3s;
-        transition:.3s;
-        background-image:-o-radial-gradient(at 80% 80%,#151929 0,#111424 36%,#000 70%);
-        background-image:radial-gradient(at 80% 80%,#151929 0,#111424 36%,#000 70%);
-        z-index:20
-    }
-    .nav-bar.clicked{
-        right:unset;
-        left:50vw;
     }
     #nav-bar ul{
         width:100%;

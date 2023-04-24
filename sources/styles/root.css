@@ -191,7 +191,8 @@ a.header-img-con-small{
     width:100%;
     height:15%
 }
-#nav-bar ul li span{
+#nav-bar ul li span,
+#sec-nav-bar ul li span{
     -webkit-transition:.5s;
     -o-transition:.5s;
     transition:.5s;
@@ -201,7 +202,8 @@ a.header-img-con-small{
     padding:0 10px;
     cursor:pointer
 }
-#nav-bar ul li span::before{
+#nav-bar ul li span::before,
+#sec-nav-bar ul li span::before{
     content:"";
     -webkit-transition:.5s;
     -o-transition:.5s;
@@ -214,13 +216,15 @@ a.header-img-con-small{
     background-color:transparent;
     border:1px solid var(--text-color-low-alpha)
 }
-#nav-bar ul li span.focus,#nav-bar ul li span:hover{
+#nav-bar ul li span.focus,#nav-bar ul li span:hover,
+#sec-nav-bar ul li span.focus,#sec-nav-bar ul li span:hover{
     color:var(--accent-color);
     -webkit-text-stroke:1px var(--accent-color);
     -webkit-filter:drop-shadow(1px 1px 25px blue);
     filter:drop-shadow(1px 1px 25px blue)
 }
-#nav-bar ul li span.focus::before,#nav-bar ul li span:hover::before{
+#nav-bar ul li span.focus::before,#nav-bar ul li span:hover::before,
+#sec-nav-bar ul li span.focus::before,#sec-nav-bar ul li span:hover::before{
     top:0;
     background-color:var(--accent-color);
     border:1px solid var(--accent-color);
@@ -803,4 +807,7 @@ section#section-about-me .github-box:hover .github-logo{
 }
 .value-con p{
     margin-left:5%
+}
+#sec-nav-bar {
+    display: none;
 }
